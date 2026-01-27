@@ -1,0 +1,11 @@
+venv/
+.venv/
+*.csv
+*.log
+*.parquet
+*.tmp
+*.json
+*.npy
+*.pyc
+.__pycache__/
+.vscode/
