@@ -1,10 +1,9 @@
 Скачать данные:
-
 pip install kaggle
 
 kaggle datasets download -d retailrocket/ecommerce-dataset -p ./data/raw --unzip
 
-_________________________________________________________________
+---
 
 session based gru model (item embeddings only) full softmax):
 
