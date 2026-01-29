@@ -38,7 +38,7 @@ def split_into_sessions(
 
 def build_user_sequences(
     df: pd.DataFrame,
-    min_seq_len: int = 2,
+    min_seq_len: int = 3,
     max_seq_len: int = 20
 ):
     train, val = [], []
@@ -125,6 +125,7 @@ def main():
 
     print(f"Train sequences: {len(train_seqs)}")
     print(f"Val sequences:   {len(val_seqs)}")
+    print(len(train_seqs) / len(val_seqs))
 
 
 if __name__ == "__main__":
