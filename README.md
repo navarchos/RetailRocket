@@ -36,6 +36,8 @@ Python, PyTorch, NumPy, Pandas, Jupyter Notebook
 
 pip install -r requirements.txt
 
+pip install torch torchvision
+
 kaggle datasets download -d retailrocket/ecommerce-dataset -p ./data/raw --unzip
 
 python -m src.data.preprocessing
