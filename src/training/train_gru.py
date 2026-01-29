@@ -32,13 +32,9 @@ def train_one_epoch(
 
         optimizer.zero_grad()
 
-        user_emb = model(items, events, return_user_emb=True)
+        logits = model(items, events)
 
-        loss = sampled_softmax_loss(
-            user_emb=user_emb,
-            target_ids=targets,
-            item_embedding=model.item_embedding
-        )
+        loss = F.cross_entropy(logits, targets)
 
         loss.backward()
 
@@ -190,7 +186,6 @@ def main():
     criterion = nn.CrossEntropyLoss()
 
     epochs = 15
-    assert targets.unique().numel() > len(targets) * 0.9
 
     for epoch in range(1, epochs + 1):
         train_loss = train_one_epoch(
